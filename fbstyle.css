@@ -1,0 +1,240 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#booklet #pageheader {
+    background: #365899;
+    color: #fff;
+}
+
+#booklet #pageheader #homelink {
+    background: url(/rsrc.php/v3/y8/r/qYG_pvNhLC1.png) no-repeat 10px 50%;
+    color: #fff;
+    margin: 0;
+    padding: 8px 10px 8px 30px;
+}
+
+.login_page #booklet #content {
+    float: none;
+    margin-bottom: 46px;
+    padding: 15px 30px 20px 30px;
+    width: auto;
+}
+
+#booklet #content {
+    border: 0 solid white;
+    float: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+
+#content {
+    margin: 0;
+    outline: none;
+    padding: 0;
+    width: auto;
+}
+
+._4idf .fb_content {
+    min-height: inherit;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+input, select, textarea {
+    background-color: #fff;
+    color: #1c1e21;
+}
+
+body, button, input, label, select, td, textarea {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+
+.login_page #booklet #loginform {
+    margin-top: 20px;
+    padding-top: 0;
+}
+.login_page #loginform {
+    clear: left;
+    margin: auto;
+    padding: 15px 0;
+    text-align: left;
+    width: 380px;
+}
+
+.form_row {
+    padding: 0 0 8px 0;
+    text-align: left;
+}
+.clearfix {
+    zoom: 1;
+}
+
+.form_row .login_form_label {
+    display: block;
+    float: left;
+    padding: 3px 0;
+    width: 100px;
+}
+
+body, button, input, label, select, td, textarea {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+label {
+    color: #606770;
+    cursor: default;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+.login_page #email {
+    direction: ltr;
+}
+.form_row .inputtext, .inputpassword {
+    width: 175px;
+}
+html ._55r1 {
+    background: #FFFFFF url(/rsrc.php/v3/yO/r/YQNfPR9MJfx.png) repeat-x;
+    border: 1px solid #dddfe2;
+    color: #1d2129;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    height: 22px;
+    line-height: 16px;
+    padding: 0 8px;
+    vertical-align: middle;
+}
+
+.form_row input {
+    margin: 0;
+}
+.inputtext, .inputpassword {
+    padding-bottom: 4px;
+}
+textarea, .inputtext, .inputpassword {
+    -webkit-appearance: none;
+    border: 1px solid #ccd0d5;
+    border-radius: 0;
+    margin: 0;
+    padding: 3px;
+}
+
+#buttons {
+    padding: 5px 0 0 100px;
+    text-align: left;
+}
+
+#buttons .uiButton {
+    margin-right: 2px;
+    background: #365899;
+}
+#buttons label {
+    float: none;
+    width: auto;
+}
+.uiButtonLarge, .uiButtonLarge .uiButtonText, .uiButtonLarge input {
+    font-size: 13px;
+    line-height: 19px;
+}
+.uiButtonConfirm {
+    background-color: #4267b2;
+    border-color: #29487d;
+}
+.uiButton, .uiButtonSuppressed:active, .uiButtonSuppressed:focus, .uiButtonSuppressed:hover {
+    background-color: #f5f6f7;
+    border: 1px solid #ccd0d5;
+}
+.uiButton {
+    border-radius: 2px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    -webkit-font-smoothing: antialiased;
+    font-weight: bold;
+    line-height: 18px;
+    padding: 2px 6px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: none;
+    vertical-align: top;
+    white-space: nowrap;
+}
+body, button, input, label, select, td, textarea {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+label {
+    color: #606770;
+    cursor: default;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+.uiButtonLarge, .uiButtonLarge .uiButtonText, .uiButtonLarge input {
+    font-size: 13px;
+    line-height: 19px;
+}
+form.async_saving .uiButton.uiButtonSpecial .uiButtonText, form.async_saving .uiButton.uiButtonSpecial input, form.async_saving .uiButton.uiButtonConfirm .uiButtonText, form.async_saving .uiButton.uiButtonConfirm input, .uiButtonSpecial .uiButtonText, .uiButtonSpecial input, .uiButtonSpecial.uiButtonDisabled .uiButtonText, .uiButtonSpecial.uiButtonDisabled input, .uiButtonConfirm .uiButtonText, .uiButtonConfirm input, .uiButtonConfirm.uiButtonDisabled .uiButtonText, .uiButtonConfirm.uiButtonDisabled input {
+    color: #fff;
+}
+.uiButtonText, .uiButton input {
+    background: none;
+    border: 0;
+    color: #4b4f56;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+.form_row input {
+    margin: 0;
+}
+label input {
+    font-weight: normal;
+}
+body, button, input, label, select, td, textarea {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+input, select, textarea {
+    background-color: #fff;
+    color: #1c1e21;
+}
+
+.login_error_box {
+    margin-top: 10px;
+}
+.pam {
+    padding: 10px;
+}
+.uiBoxRed {
+    background-color: #ffebe8;
+    border: 1px solid #dd3c10;
+}
+
+.fcb {
+    color: #333;
+}
+.fwb {
+    font-weight: 600;
+}
+.fsl {
+    font-size: 14px;
+}
+
+a {
+    color: #385898;
+    cursor: pointer;
+    text-decoration: none;
+}

