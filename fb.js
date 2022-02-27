@@ -5,12 +5,12 @@ const err1fb = document.getElementById('error_box1');
 
 const usersfb = [
     {
-        username: "05362284637",
-        password: "Ali3457y"
+        username: "05357853434",
+        password: "fvtı09o"
     },
     {
-        username: "ismet@gmail.com",
-        password: "asd123er"
+        username: "alp@gmail.com",
+        password: "fds135bo"
     }
 ];
 
