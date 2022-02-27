@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
+# test 2
 def test2():
     PATH = "C:\driver\chromedriver.exe"
     driver = webdriver.Chrome(PATH)

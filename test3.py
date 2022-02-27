@@ -6,6 +6,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
 
+# test 3
 def test3():
     PATH = "C:\driver\chromedriver.exe"
     driver = webdriver.Chrome(PATH)
