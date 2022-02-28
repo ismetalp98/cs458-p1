@@ -8,8 +8,10 @@ const passwordWarning = document.getElementById("warningPassword");
 const userNot = document.getElementById('userNot');
 const passNot = document.getElementById('passNot');
 const benihatirla = document.getElementById('benihatirla');
+const showp = document.getElementById('showp');
 
-window.onload = () => {
+const onLoada = () => {
+    console.log("onload");
     const myInput = document.getElementById('inputPassword');
     myInput.onpaste = e => e.preventDefault();
     let isLog = false;
@@ -142,9 +144,19 @@ const showPss = () => {
     if (type === "password") {
         password.type = "text";
         password.onpaste = e => e.preventDefault();
+        if(document.lang === "tr"){
+            showp.innerHTML = "Gizle";
+        } else {
+            showp.innerHTML = "Hide";
+        }
     } else {
         password.type = "password";
         password.onpaste = e => e.clipboardData.setData('text/plain', password.value);
+        if(document.lang === "tr"){
+            showp.innerHTML = "Göster";
+        } else {
+            showp.innerHTML = "Show";
+        }
     }
 }
 

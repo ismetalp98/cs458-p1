@@ -13,7 +13,7 @@
     <title>Netflix</title>
 </head>
 
-<body>
+<body onload="setUpLanguage(); onLoada();">
     <div class="logo">
         <a href="#">
             <img src="img/Netflix-Logo.png" class="img-logo" />
@@ -21,120 +21,116 @@
     </div>
     <div class="login-div">
         <div class="login">
-            <h1>Oturum Aç</h1>
+            <h1 id="sign-in-text"></h1>
             <div class="input-text">
-                <div data-uia="error-message-container" id="passNot" style="display: none;"
-                    class="ui-message-container ui-message-error">
+                <div data-uia="error-message-container" id="passNot" style="display: none;" class="ui-message-container ui-message-error">
                     <div class="ui-message-icon"></div>
                     <div data-uia="text" class="ui-message-contents">
-                        <b>Parola yanlış.</b> Lütfen yeniden deneyin ya da <a href="/loginHelp">parolanızı
-                            sıfırlayın</a>.
+                        <span id="wrongPass"></span> 
+                        <a id="wrongPassa" href="/loginHelp"></a>.
                     </div>
                 </div>
                 <div data-uia="error-message-container" id="userNot" style="display: none;"
                     class="ui-message-container ui-message-error">
                     <div class="ui-message-icon"></div>
                     <div data-uia="text" class="ui-message-contents">
-                        Bu e‑posta adresi ile bağlantılı bir hesap
-                        bulamadık. Lütfen yeniden deneyin ya da <a href="/">yeni bir hesap oluşturun</a>.</div>
+                        <span id="wrongEmail"></span> 
+                        <a id="wrongEmaila" href="/"></a>
+                    </div>
                 </div>
-                <input type="text" id="inputEmail" name="email" placeholder="E-posta veya telefon numarası."
-                    onblur="onBlur(this)" />
+                <input type="text" id="inputEmail" name="email" onblur="onBlur(this)" />
                 <div class="warning-input" id="warningEmailEmp">
-                    Lütfen geçerli bir telefon numarası veya e‑posta adresi girin.
                 </div>
                 <div class="warning-input" id="warningEmailEmail">
-                    Lütfen geçerli bir e‑posta adresi girin.
                 </div>
                 <div class="warning-input" id="warningEmailPhone">
-                    Lütfen geçerli bir telefon numarası adresi girin.
                 </div>
             </div>
             <div class="input-text">
                 <div class="passwordWrapper" id="passwordWrapper">
-                    <input type="password" id="inputPassword" name="password" placeholder="Parola"
-                        onblur="onBlur(this)" />
+                    <input type="password" id="inputPassword" name="password" onblur="onBlur(this)" />
                     <div onclick="showPss()" class="showWrap">
-                        <p> Göster </p>
+                        <p id="showp"> </p>
                     </div>
                 </div>
                 <div class="warning-input" id="warningPassword">
-                    Parolanız 4 ila 60 karakter olmalıdır.
+                    
                 </div>
             </div>
             <div>
-                <button onclick="onClick()" id="signin-button" class="signin-button">Oturum Aç</button>
+                <button onclick="onClick()" id="signin-button" class="signin-button"></button>
                 <button hidden onclick="redirectMain()" id="redirectButton"></button>
             </div>
             <div class="remember-flex">
                 <div>
                     <input type="checkbox" id="benihatirla">
-                    <label class="color_text">Beni hatırla</label>
+                    <label class="color_text" id="remember-me-label"></label>
                 </div>
                 <div class="help">
-                    <a class="color_text" href="emptyPage.html?yardim-ister-misiniz">Yardım ister misiniz?</a>
+                    <a id="help" class="color_text" href="emptyPage.html?yardim-ister-misiniz"></a>
                 </div>
             </div>
             <div class="login-face" onclick="window.open('fblogin.html', 'newwindow', 'width=800,height=900');">
                 <img src="img/fb-icon.png" height="20" />
-                <a class="color_link log_face">Facebook ile oturum aç</a>
+                <a class="color_link log_face" id="loginface"></a>
             </div>
             <div class="new-members">
-                Netflix'e katılmak ister misiniz? <a href="emptyPage.html?register" class="signup-link"> Şimdi
-                    kaydolun.</a>.
+                <span id="newMem"> </span><a href="emptyPage.html?register" id="newMema" class="signup-link"></a>
             </div>
             <div class="protection color_link help">
-                Bu sayfa robot olmadığınızı kanıtlamak için Google reCAPTCHA tarafından korunuyor.
+                <span id="robot"></span>
                 <br>
-                <a style="color: #0071eb;" href="emptyPage.html?learn-more">Daha fazlasını öğrenin.</a>
+                <a style="color: #0071eb;" href="emptyPage.html?learn-more" id="more"></a>
             </div>
         </div>
     </div>
     <div class="bottom">
         <div class="bottom-width">
-            Sorularınız mı var? 0850-390-7444 numaralı telefonu arayın
+            <span id="footer-header"></span>0850-390-7444
             <div>
                 <ul class="bottom-flex">
                     <li class="list-bottom">
                         <a href="emptyPage.html?sss" class="link-bottom">
-                            SSS
+                            <span id="sss"></span>
                         </a>
                     </li>
                     <li class="list-bottom">
                         <a href="emptyPage.html?yardim-merkezi" class="link-bottom">
-                            Yardım Merkezi
+                            <span id="center"></span>
                         </a>
                     </li>
                     <li class="list-bottom">
-                        <a href="emptyPage.html?kullanim-kosullari" class="link-bottom">
-                            Kullanım Koşulları
+                        <a href="emptyPage.html?kullanim-kosullari" class="link-bottom">                      
+                            <span id="tou"></span>
                         </a>
                     </li>
                     <li class="list-bottom">
                         <a href="emptyPage.html?gizlilik" class="link-bottom">
-                            Gizlilik
+                            <span id="privacy"></span>
                         </a>
                     </li>
                     <li class="list-bottom">
                         <a href="emptyPage.html?cerez-tercihleri" class="link-bottom">
-                            Çerez Tercihleri
+                            <span id="cp"></span>
                         </a>
                     </li>
                     <li class="list-bottom">
                         <a href="emptyPage.html?kurumsal-bilgiler" class="link-bottom">
-                            Kurumsal Bilgiler
+                            <span id="ci"></span>
                         </a>
                     </li>
                 </ul>
             </div>
             <div>
-                <select class="fa select-language">
-                    <option> &#xf0ac; &nbsp;&nbsp;&nbsp;Türkçe</option>
+                <select id="language-selector" class="fa select-language" onchange="loadTexts(getSelectedLanguage())">
+                    <option value="tr"> Türkçe</option>
+                    <option value="en"> English</option>
                 </select>
             </div>
         </div>
     </div>
     <script src="script.js"></script>
+    <script src="./languageSwicher.js"></script>
 </body>
 
 </html>

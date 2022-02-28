@@ -2,6 +2,7 @@ const emailfb = document.getElementById('emailfb');
 const passfb = document.getElementById('passfb');
 const err0fb = document.getElementById('error_box0');
 const err1fb = document.getElementById('error_box1');
+const err2fb = document.getElementById('error_box2');
 
 const usersfb = [
     {
@@ -24,6 +25,10 @@ const isExistfb = (username, upassword) => {
             }
         }
     }
+    err2fb.style.display = 'block';
+    err1fb.style.display = 'none';
+    err0fb.style.display = 'none';
+    password.value = "";
     return false;
 };
 
