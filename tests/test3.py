@@ -1,19 +1,19 @@
-# cases 2-3
-import time
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
+import time
+from decouple import config
 
-# test 3
+
 def test3():
-    PATH = "C:\driver\chromedriver.exe"
-    driver = webdriver.Chrome(PATH)
+    driver = webdriver.Chrome(config('CHROMEDRIVER_PATH'))
 
-    driver.get("http://dijkstra.ug.bcc.bilkent.edu.tr/~alp.eren/cs458-p1/index.html")
+    driver.get(
+        "http://dijkstra.ug.bcc.bilkent.edu.tr/~alp.eren/cs458-p1/index.html")
 
-    # test 3.1 copy from email paste to password
+    # Test 3.1 copy from email paste to password
 
     email = driver.find_element(By.ID, 'inputEmail')
     email.send_keys("asd123er")
@@ -37,7 +37,7 @@ def test3():
 
     assert driver.find_element(By.ID, "signin-button")
 
-    # test 3.2 copy from password pass to email when it is hidden
+    # Test 3.2 copy from password pass to email when it is hidden
 
     password.click()
     act.key_down(Keys.CONTROL).send_keys("a").key_up(Keys.CONTROL).perform()
@@ -62,7 +62,7 @@ def test3():
 
     assert driver.find_element(By.ID, "signin-button")
 
-    # test 3.3 copy from password pass to email when it is not hidden
+    # Test 3.3 copy from password pass to email when it is not hidden
 
     password.click()
     act.key_down(Keys.CONTROL).send_keys("a").key_up(Keys.CONTROL).perform()
