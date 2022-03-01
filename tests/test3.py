@@ -10,8 +10,7 @@ from decouple import config
 def test3():
     driver = webdriver.Chrome(config('CHROMEDRIVER_PATH'))
 
-    driver.get(
-        "http://dijkstra.ug.bcc.bilkent.edu.tr/~alp.eren/cs458-p1/index.html")
+    driver.get("https://ismetalp98.github.io/cs458-p1/")
 
     # Test 3.1 copy from email paste to password
 

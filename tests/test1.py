@@ -32,7 +32,7 @@ def test1():
     assert warn_invalid_email.is_displayed()
     assert not warn_invalid_pass.is_displayed()
 
-    # Case 1.3: Login with non-exisitng email
+    # Case 1.3: Login with non-existing email
     driver.get(base_path)
     driver.find_element(By.ID, "inputEmail").send_keys("mayathecat@gmail.com")
     driver.find_element(By.ID, "inputPassword").send_keys("Agrt67u")
