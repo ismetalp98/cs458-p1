@@ -143,7 +143,7 @@ def test1():
     driver.find_element(By.ID, "email").send_keys("mayatheozsoy@gmail.com")
     driver.find_element(By.ID, "pass").send_keys("klmldsgk")
     driver.find_element(By.ID, "loginbutton").click()
-    time.sleep(2)
+    time.sleep(1)
     inc_email_phone = driver.find_element(By.ID, 'error_box')
     assert inc_email_phone.is_displayed()
 
@@ -153,7 +153,7 @@ def test1():
     driver.find_element(By.ID, "email").send_keys("mayatheozsoy@gmail.com")
     driver.find_element(By.ID, "pass").send_keys("thecatnamedmaya")
     driver.find_element(By.ID, "loginbutton").click()
-    time.sleep(2)
+    time.sleep(5)
     driver.switch_to.window(main_window)
     current_url = driver.current_url
     expected_url = base_path + "emptyPage.html?logged-in"
@@ -170,8 +170,10 @@ def test1():
 
     # Case 1.15: Login with incorrect phone and empty password field
     time.sleep(2)
+    driver.find_element(By.ID, "email").clear()
     driver.find_element(By.ID, "email").send_keys("05436786564")
     driver.find_element(By.ID, "loginbutton").click()
+    time.sleep(1)
     inc_email_phone = driver.find_element(By.ID, 'error_box')
     assert inc_email_phone.is_displayed()
 
@@ -190,7 +192,8 @@ def test1():
     driver.find_element(By.ID, "pass").clear()
     driver.find_element(By.ID, "email").send_keys("05319215595")
     driver.find_element(By.ID, "pass").send_keys("thecatnamedmaya")
-    driver.find_element(By.ID, "loginbutton").click()  # login button
+    driver.find_element(By.ID, "loginbutton").click()
+    time.sleep(2)
     assert len(driver.window_handles) == 1
     driver.switch_to.window(main_window)
     current_url = driver.current_url
