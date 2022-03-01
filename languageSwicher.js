@@ -89,7 +89,6 @@ const labels = Object.freeze(
 );
 
 const loadTexts = function (lang) {
-    console.log(lang);
     let text = lang === 'tr' ? labels.tr : labels.en;
     for (let i = 0; i < ids.length; i++) {
         if (ids[i] === 'inputEmail') {
@@ -113,7 +112,6 @@ const getSelectedLanguage = function () {
 }
 
 const getBrowserLanguage = function () {
-    console.log(document.cookie);
     document.cookie.split(';').forEach(element => {
         if (element.trim() === 'tr') {
             return 'tr';
@@ -128,7 +126,6 @@ const getBrowserLanguage = function () {
 
 const setSelectedLanguage = function (lang) {
     lang = lang === 'tr' ? lang : 'en';
-    console.log(lang);
     document.cookie = lang + ";";
     document.getElementById('language-selector').value = lang;
 }

@@ -16,6 +16,7 @@ const onLoada = () => {
     let isLog = false;
     let userName;
     let passwordt;
+    console.log(document.cookie);
     document.cookie.split(';').forEach(element => {
         if (element.trim() === 'loggedin') {
             isLog = true;
