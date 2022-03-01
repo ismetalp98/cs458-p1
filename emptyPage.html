@@ -31,7 +31,7 @@
                 but.style.fontSize = '70px';
                 function clicka() {
                     FB.logout(function (response) {
-                        // Person is now logged out
+                        console.log(response);
                     });
                     document.cookie = "loggedout";
                     const elm = document.createElement('a');
