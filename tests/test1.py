@@ -113,8 +113,9 @@ def test1():
     assert current_url == expected_url
 
     # Case 1.10: Login with empty username and password
-    driver.find_element(By.ID, "u_0_0_Q6").click()  # login button
-
+    ##new id
+    driver.find_element(By.ID, "loginbutton").click()  # login button
+    ##old id
     inc_email_phone = driver.find_element(By.ID, 'error_box1')
     wrong_pass = driver.find_element(By.ID, 'error_box0')
 
