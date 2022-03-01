@@ -74,11 +74,11 @@ def test2():
             driver.switch_to.window(fb_login)
             break
 
-    driver.find_element(By.ID, "emailfb").send_keys("alp@gmail.com")
+    driver.find_element(By.ID, "email").send_keys("alp@gmail.com")
     time.sleep(1)
-    driver.find_element(By.ID, "passfb").send_keys("fds135bo")
+    driver.find_element(By.ID, "pass").send_keys("fds135bo")
     time.sleep(1)
-    driver.find_element(By.ID, "u_0_0_Q6").click()
+    driver.find_element(By.ID, "loginbutton").click()
     time.sleep(1)
 
     driver.switch_to.window(main_window)
