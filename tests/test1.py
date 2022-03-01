@@ -178,6 +178,7 @@ def test1():
     assert inc_email_phone.is_displayed()
 
     # Case 1.16: Login with existing phone and wrong password
+    time.sleep(2)
     driver.find_element(By.ID, "email").clear()
     driver.find_element(By.ID, "pass").clear()
     driver.find_element(By.ID, "email").send_keys("05319215595")
@@ -193,7 +194,7 @@ def test1():
     driver.find_element(By.ID, "email").send_keys("05319215595")
     driver.find_element(By.ID, "pass").send_keys("thecatnamedmaya")
     driver.find_element(By.ID, "loginbutton").click()
-    time.sleep(2)
+    time.sleep(5)
     assert len(driver.window_handles) == 1
     driver.switch_to.window(main_window)
     current_url = driver.current_url
