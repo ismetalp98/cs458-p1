@@ -60,7 +60,6 @@
             </div>
             <div>
                 <button onclick="onClick()" id="signin-button" class="signin-button"></button>
-                <button hidden onclick="redirectMain()" id="redirectButton"></button>
             </div>
             <div class="remember-flex">
                 <div>
@@ -72,10 +71,6 @@
                 </div>
             </div>
             <div class="login-face" onclick="fbLogin();">
-                <img src="img/fb-icon.png" height="20" />
-                <a class="color_link log_face" id="loginface"></a>
-            </div>
-            <div class="login-face" onclick="checkLoginState();">
                 <img src="img/fb-icon.png" height="20" />
                 <a class="color_link log_face" id="loginface"></a>
             </div>
@@ -160,7 +155,18 @@
 
         function fbLogin() {
             FB.login(function (response) {
-                console.log(response);
+                if (response.status === "connected") {
+                    document.cookie = "loggedin;";
+                    if (benihatirla.checked) {
+                        document.cookie = "userName=" + email.value + "; ";
+                        document.cookie = "password=" + password.value + "; ";
+                    }
+                    const elm = document.createElement('a');
+                    elm.href = "emptyPage.html?logged-in";
+                    elm.click();
+                } else {
+                    console.log('not logged in');
+                }
             });
         }
 

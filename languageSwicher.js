@@ -112,13 +112,6 @@ const getSelectedLanguage = function () {
 }
 
 const getBrowserLanguage = function () {
-    document.cookie.split(';').forEach(element => {
-        if (element.trim() === 'tr') {
-            return 'tr';
-        } else if (element.trim() === 'en') {
-            return 'en';
-        }
-    });
     let lang = navigator.language || navigator.userLanguage;
     lang = lang.slice(0, 2);
     return lang;
@@ -126,7 +119,6 @@ const getBrowserLanguage = function () {
 
 const setSelectedLanguage = function (lang) {
     lang = lang === 'tr' ? lang : 'en';
-    document.cookie = lang + ";";
     document.getElementById('language-selector').value = lang;
 }
 
