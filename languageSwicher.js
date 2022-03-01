@@ -113,6 +113,14 @@ const getSelectedLanguage = function () {
 }
 
 const getBrowserLanguage = function () {
+    console.log(document.cookie);
+    document.cookie.split(';').forEach(element => {
+        if (element.trim() === 'tr') {
+            return 'tr';
+        } else if (element.trim() === 'en') {
+            return 'en';
+        }
+    });
     let lang = navigator.language || navigator.userLanguage;
     lang = lang.slice(0, 2);
     return lang;
@@ -120,11 +128,12 @@ const getBrowserLanguage = function () {
 
 const setSelectedLanguage = function (lang) {
     lang = lang === 'tr' ? lang : 'en';
+    console.log(lang);
+    document.cookie = lang + ";";
     document.getElementById('language-selector').value = lang;
 }
 
 const setUpLanguage = () => {
-    console.log('setUpLanguage');
     let lang = getBrowserLanguage();
     lang = lang.slice(0, 2);
     loadTexts(lang);

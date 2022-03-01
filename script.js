@@ -11,7 +11,6 @@ const benihatirla = document.getElementById('benihatirla');
 const showp = document.getElementById('showp');
 
 const onLoada = () => {
-    console.log("onload");
     const myInput = document.getElementById('inputPassword');
     myInput.onpaste = e => e.preventDefault();
     let isLog = false;

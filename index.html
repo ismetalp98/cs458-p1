@@ -23,10 +23,11 @@
         <div class="login">
             <h1 id="sign-in-text"></h1>
             <div class="input-text">
-                <div data-uia="error-message-container" id="passNot" style="display: none;" class="ui-message-container ui-message-error">
+                <div data-uia="error-message-container" id="passNot" style="display: none;"
+                    class="ui-message-container ui-message-error">
                     <div class="ui-message-icon"></div>
                     <div data-uia="text" class="ui-message-contents">
-                        <span id="wrongPass"></span> 
+                        <span id="wrongPass"></span>
                         <a id="wrongPassa" href="/loginHelp"></a>.
                     </div>
                 </div>
@@ -34,7 +35,7 @@
                     class="ui-message-container ui-message-error">
                     <div class="ui-message-icon"></div>
                     <div data-uia="text" class="ui-message-contents">
-                        <span id="wrongEmail"></span> 
+                        <span id="wrongEmail"></span>
                         <a id="wrongEmaila" href="/"></a>
                     </div>
                 </div>
@@ -54,7 +55,7 @@
                     </div>
                 </div>
                 <div class="warning-input" id="warningPassword">
-                    
+
                 </div>
             </div>
             <div>
@@ -70,7 +71,11 @@
                     <a id="help" class="color_text" href="emptyPage.html?yardim-ister-misiniz"></a>
                 </div>
             </div>
-            <div class="login-face" onclick="window.open('fblogin.html', 'newwindow', 'width=800,height=900');">
+            <div class="login-face" onclick="fbLogin();">
+                <img src="img/fb-icon.png" height="20" />
+                <a class="color_link log_face" id="loginface"></a>
+            </div>
+            <div class="login-face" onclick="checkLoginState();">
                 <img src="img/fb-icon.png" height="20" />
                 <a class="color_link log_face" id="loginface"></a>
             </div>
@@ -100,7 +105,7 @@
                         </a>
                     </li>
                     <li class="list-bottom">
-                        <a href="emptyPage.html?kullanim-kosullari" class="link-bottom">                      
+                        <a href="emptyPage.html?kullanim-kosullari" class="link-bottom">
                             <span id="tou"></span>
                         </a>
                     </li>
@@ -131,6 +136,36 @@
     </div>
     <script src="script.js"></script>
     <script src="./languageSwicher.js"></script>
+
+    <script>
+
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '501049594934524',
+                xfbml: true,
+                cookie: true,
+                version: 'v13.0'
+            });
+            FB.AppEvents.logPageView();
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+
+        function fbLogin() {
+            FB.login(function (response) {
+                console.log(response);
+            });
+        }
+
+
+    </script>
 </body>
 
 </html>

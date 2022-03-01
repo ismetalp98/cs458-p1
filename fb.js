@@ -21,14 +21,17 @@ const isExistfb = (username, upassword) => {
             if (asd.password === upassword) {
                 return true;
             } else {
+                err0fb.style.display = 'block';
+                err1fb.style.display = 'none';
+                err2fb.style.display = 'none';
                 return false;
             }
         }
     }
-    err2fb.style.display = 'block';
-    err1fb.style.display = 'none';
+    err2fb.style.display = 'none';
+    err1fb.style.display = 'block';
     err0fb.style.display = 'none';
-    password.value = "";
+    passfb.value = "";
     return false;
 };
 
@@ -36,6 +39,7 @@ const onClickFb = async () => {
     if (emailfb.value === '' || passfb.value === '') {
         err1fb.style.display = 'block';
         err0fb.style.display = 'none';
+        err2fb.style.display = 'none';
     }
     else if (isExistfb(emailfb.value, passfb.value)) {
         if (window.opener != null && !window.opener.closed) {
@@ -43,8 +47,5 @@ const onClickFb = async () => {
             txtName.click();
         }
         window.close();
-    } else {
-        err0fb.style.display = 'block';
-        err1fb.style.display = 'none';
     }
 };
