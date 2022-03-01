@@ -49,13 +49,15 @@
                 but.innerText = "logout";
                 but.style.fontSize = '70px';
                 function clicka() {
-                    FB.logout(function (response) {
-                        console.log(response);
+                    FB.getLoginStatus(function (response) {
+                        FB.logout(function (response) {
+                            console.log("Logged Out!");
+                            document.cookie = "loggedout";
+                            const elm = document.createElement('a');
+                            elm.href = "index.html";
+                            elm.click();
+                        });
                     });
-                    document.cookie = "loggedout";
-                    const elm = document.createElement('a');
-                    elm.href = "index.html";
-                    elm.click();
                 }
                 but.onclick = clicka;
                 document.getElementById('emptyPage').appendChild(but);
