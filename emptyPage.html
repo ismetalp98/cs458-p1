@@ -30,6 +30,9 @@
                 but.innerText = "logout";
                 but.style.fontSize = '70px';
                 function clicka() {
+                    FB.logout(function (response) {
+                        // Person is now logged out
+                    });
                     document.cookie = "loggedout";
                     const elm = document.createElement('a');
                     elm.href = "index.html";
