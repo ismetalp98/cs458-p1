@@ -1,11 +1,6 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver import ActionChains
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
-import time
 from decouple import config
 
 
@@ -60,7 +55,6 @@ def test4():
     driver.find_element(By.ID, "signin-button").click()
     logout = driver.find_element(By.XPATH, "//*[@id='emptyPage']/button")
     logout.click()
-    time.sleep(1)
     assert driver.find_element(
         By.ID, "inputEmail").get_attribute('value') == ""
     assert driver.find_element(
