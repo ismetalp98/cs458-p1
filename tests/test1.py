@@ -122,10 +122,11 @@ def test1():
     assert not wrong_pass.is_displayed()
 
     # Case 1.11: Login with incorrect email
-    driver.find_element(By.ID, "emailfb").send_keys("mayathecat")
-    driver.find_element(By.ID, "passfb").send_keys("12345678")
-    driver.find_element(By.ID, "u_0_0_Q6").click()  # login button
-
+    ##new id
+    driver.find_element(By.ID, "email").send_keys("mayathecat") 
+    driver.find_element(By.ID, "pass").send_keys("12345678")
+    driver.find_element(By.ID, "loginbutton").click()  # login button
+    ## old id
     inc_email_phone = driver.find_element(By.ID, 'error_box1')
     wrong_pass = driver.find_element(By.ID, 'error_box0')
 
@@ -133,12 +134,13 @@ def test1():
     assert not wrong_pass.is_displayed()
 
     # Case 1.12: Login with incorrect email
-    driver.find_element(By.ID, "emailfb").clear()
-    driver.find_element(By.ID, "passfb").clear()
-    driver.find_element(By.ID, "emailfb").send_keys("mayathecat@gmail.com")
-    driver.find_element(By.ID, "passfb").send_keys("12345678")
-    driver.find_element(By.ID, "u_0_0_Q6").click()  # login button
-
+    ## new id
+    driver.find_element(By.ID, "email").clear()
+    driver.find_element(By.ID, "pass").clear()
+    driver.find_element(By.ID, "email").send_keys("mayathecat@gmail.com")
+    driver.find_element(By.ID, "pass").send_keys("12345678")
+    driver.find_element(By.ID, "loginbutton").click()  # login button
+    #old id
     inc_email_phone = driver.find_element(By.ID, 'error_box1')
     wrong_pass = driver.find_element(By.ID, 'error_box0')
 
@@ -146,12 +148,13 @@ def test1():
     assert not wrong_pass.is_displayed()
 
     # Case 1.13: Login with existing email and wrong password
-    driver.find_element(By.ID, "emailfb").clear()
-    driver.find_element(By.ID, "passfb").clear()
-    driver.find_element(By.ID, "emailfb").send_keys("alp@gmail.com")
-    driver.find_element(By.ID, "passfb").send_keys("klmldsgk")
-    driver.find_element(By.ID, "u_0_0_Q6").click()  # login button
-
+    #new id
+    driver.find_element(By.ID, "email").clear()
+    driver.find_element(By.ID, "pass").clear()
+    driver.find_element(By.ID, "email").send_keys("alp@gmail.com")
+    driver.find_element(By.ID, "pass").send_keys("klmldsgk")
+    driver.find_element(By.ID, "loginbutton").click()  # login button
+    #old id
     inc_email_phone = driver.find_element(By.ID, 'error_box1')
     wrong_pass = driver.find_element(By.ID, 'error_box0')
 
@@ -159,11 +162,12 @@ def test1():
     assert wrong_pass.is_displayed()
 
     # Case 1.14: Login with existing email and correct password
-    driver.find_element(By.ID, "emailfb").clear()
-    driver.find_element(By.ID, "passfb").clear()
-    driver.find_element(By.ID, "emailfb").send_keys("alp@gmail.com")
-    driver.find_element(By.ID, "passfb").send_keys("fds135bo")
-    driver.find_element(By.ID, "u_0_0_Q6").click()  # login button
+    ##new id
+    driver.find_element(By.ID, "email").clear()
+    driver.find_element(By.ID, "pass").clear()
+    driver.find_element(By.ID, "email").send_keys("alp@gmail.com")
+    driver.find_element(By.ID, "pass").send_keys("fds135bo")
+    driver.find_element(By.ID, "loginbutton").click()  # login button
     driver.switch_to.window(main_window)
 
     current_url = driver.current_url
@@ -180,10 +184,10 @@ def test1():
         if fb_login != main_window:  # Facebook login page
             driver.switch_to.window(fb_login)
             break
-
-    driver.find_element(By.ID, "emailfb").send_keys("05436786564")
-    driver.find_element(By.ID, "u_0_0_Q6").click()  # login button
-
+    ## new id
+    driver.find_element(By.ID, "email").send_keys("05436786564")
+    driver.find_element(By.ID, "loginbutton").click()  # login button
+    ##old id
     inc_email_phone = driver.find_element(By.ID, 'error_box1')
     wrong_pass = driver.find_element(By.ID, 'error_box0')
 
@@ -191,12 +195,13 @@ def test1():
     assert not wrong_pass.is_displayed()
 
     # Case 1.16: Login with existing phone and wrong password
-    driver.find_element(By.ID, "emailfb").clear()
-    driver.find_element(By.ID, "passfb").clear()
-    driver.find_element(By.ID, "emailfb").send_keys("05357853434")
-    driver.find_element(By.ID, "passfb").send_keys("12345678")
-    driver.find_element(By.ID, "u_0_0_Q6").click()  # login button
-
+    ##new id
+    driver.find_element(By.ID, "email").clear()
+    driver.find_element(By.ID, "pass").clear()
+    driver.find_element(By.ID, "email").send_keys("05357853434")
+    driver.find_element(By.ID, "pass").send_keys("12345678")
+    driver.find_element(By.ID, "loginbutton").click()  # login button
+    ##old id
     inc_email_phone = driver.find_element(By.ID, 'error_box1')
     wrong_pass = driver.find_element(By.ID, 'error_box0')
 
@@ -204,11 +209,12 @@ def test1():
     assert wrong_pass.is_displayed()
 
     # Case 1.17: Login with existing phone and correct password
-    driver.find_element(By.ID, "emailfb").clear()
-    driver.find_element(By.ID, "passfb").clear()
-    driver.find_element(By.ID, "emailfb").send_keys("05357853434")
-    driver.find_element(By.ID, "passfb").send_keys("fvtı09o")
-    driver.find_element(By.ID, "u_0_0_Q6").click()  # login button
+    ##new id
+    driver.find_element(By.ID, "email").clear()
+    driver.find_element(By.ID, "pass").clear()
+    driver.find_element(By.ID, "email").send_keys("05357853434")
+    driver.find_element(By.ID, "pass").send_keys("fvtı09o")
+    driver.find_element(By.ID, "loginbutton").click()  # login button
     assert len(driver.window_handles) == 1
 
     driver.switch_to.window(main_window)
