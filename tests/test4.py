@@ -17,17 +17,17 @@ def test4():
 
     driver.find_element(By.ID, "inputEmail").send_keys("ismet@gmail.com")
     driver.find_element(By.ID, "inputPassword").send_keys("asd123er")
-    checkbox = driver.find_element(By.XPATH, "/html/body/div[2]/div/div[4]/div[1]/input")
+    checkbox = driver.find_element(
+        By.XPATH, "/html/body/div[2]/div/div[4]/div[1]/input")
     checkbox.click()
     driver.find_element(By.ID, "signin-button").click()
     logout = driver.find_element(By.XPATH, "//*[@id='emptyPage']/button")
     logout.click()
 
     assert ("ismet@gmail.com" == driver.find_element(
-        By.ID, "inputEmail").get_attribute('value')) 
+        By.ID, "inputEmail").get_attribute('value'))
     assert ("asd123er" == driver.find_element(
-                By.ID, "inputPassword").get_attribute('value'))
-
+        By.ID, "inputPassword").get_attribute('value'))
 
     driver.close()
     driver = webdriver.Chrome(config('CHROMEDRIVER_PATH'))
@@ -37,16 +37,17 @@ def test4():
 
     driver.find_element(By.ID, "inputEmail").send_keys("05362284637")
     driver.find_element(By.ID, "inputPassword").send_keys("Ali3457y")
-    checkbox = driver.find_element(By.XPATH, "/html/body/div[2]/div/div[4]/div[1]/input")
+    checkbox = driver.find_element(
+        By.XPATH, "/html/body/div[2]/div/div[4]/div[1]/input")
     checkbox.click()
     driver.find_element(By.ID, "signin-button").click()
     logout = driver.find_element(By.XPATH, "//*[@id='emptyPage']/button")
     logout.click()
 
     assert ("05362284637" == driver.find_element(
-        By.ID, "inputEmail").get_attribute('value')) 
+        By.ID, "inputEmail").get_attribute('value'))
     assert ("Ali3457y" == driver.find_element(
-                By.ID, "inputPassword").get_attribute('value'))
+        By.ID, "inputPassword").get_attribute('value'))
 
     driver.close()
     driver = webdriver.Chrome(config('CHROMEDRIVER_PATH'))
@@ -59,9 +60,13 @@ def test4():
     driver.find_element(By.ID, "signin-button").click()
     logout = driver.find_element(By.XPATH, "//*[@id='emptyPage']/button")
     logout.click()
+    time.sleep(1)
     assert driver.find_element(
-        By.ID, "inputEmail").get_attribute('placeholder') == "E-posta veya telefon numarası"
+        By.ID, "inputEmail").get_attribute('value') == ""
     assert driver.find_element(
-        By.ID, "inputPassword").get_attribute('placeholder') == "Şifre"
+        By.ID, "inputPassword").get_attribute('value') == ""
 
     driver.close()
+
+
+test4()
