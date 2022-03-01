@@ -12,7 +12,6 @@ from decouple import config
 
 def test5():
     driver = webdriver.Chrome(config('CHROMEDRIVER_PATH'))
-    driver.get("http://dijkstra.ug.bcc.bilkent.edu.tr/~alp.eren/cs458-p1/")
 
     # Case 5.1: Change language to English from Turkish
     driver.get("http://dijkstra.ug.bcc.bilkent.edu.tr/~alp.eren/cs458-p1/index.html")

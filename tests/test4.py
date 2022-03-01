@@ -11,8 +11,7 @@ from decouple import config
 
 def test4():
     driver = webdriver.Chrome(config('CHROMEDRIVER_PATH'))
-    driver.get("http://dijkstra.ug.bcc.bilkent.edu.tr/~alp.eren/cs458-p1/")
-    
+
     # Case 4.1: Remember me with email
     driver.get("http://dijkstra.ug.bcc.bilkent.edu.tr/~alp.eren/cs458-p1/index.html")
 
