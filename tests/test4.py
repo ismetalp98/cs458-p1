@@ -13,7 +13,7 @@ def test4():
     driver = webdriver.Chrome(config('CHROMEDRIVER_PATH'))
 
     # Case 4.1: Remember me with email
-    driver.get("http://dijkstra.ug.bcc.bilkent.edu.tr/~alp.eren/cs458-p1/index.html")
+    driver.get("https://ismetalp98.github.io/cs458-p1/")
 
     driver.find_element(By.ID, "inputEmail").send_keys("ismet@gmail.com")
     driver.find_element(By.ID, "inputPassword").send_keys("asd123er")
@@ -33,7 +33,7 @@ def test4():
     driver = webdriver.Chrome(config('CHROMEDRIVER_PATH'))
 
     # Case 4.2: Remember me with phone number
-    driver.get("http://dijkstra.ug.bcc.bilkent.edu.tr/~alp.eren/cs458-p1/index.html")
+    driver.get("https://ismetalp98.github.io/cs458-p1/")
 
     driver.find_element(By.ID, "inputEmail").send_keys("05362284637")
     driver.find_element(By.ID, "inputPassword").send_keys("Ali3457y")
@@ -52,7 +52,7 @@ def test4():
     driver = webdriver.Chrome(config('CHROMEDRIVER_PATH'))
 
     # Case 4.3: Not remember
-    driver.get("http://dijkstra.ug.bcc.bilkent.edu.tr/~alp.eren/cs458-p1/index.html")
+    driver.get("https://ismetalp98.github.io/cs458-p1/")
 
     driver.find_element(By.ID, "inputEmail").send_keys("05362284637")
     driver.find_element(By.ID, "inputPassword").send_keys("Ali3457y")

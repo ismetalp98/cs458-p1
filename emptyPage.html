@@ -12,6 +12,25 @@
 <body>
     <div id="emptyPage">
         <script>
+
+            window.fbAsyncInit = function () {
+                FB.init({
+                    appId: '501049594934524',
+                    xfbml: true,
+                    cookie: true,
+                    version: 'v13.0'
+                });
+                FB.AppEvents.logPageView();
+            };
+
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) { return; }
+                js = d.createElement(s); js.id = id;
+                js.src = "https://connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+
             const asd = window.location.href.split('?').pop();
             const par = document.createElement('p');
             if (asd === "logged-in") {
@@ -30,8 +49,10 @@
                 but.innerText = "logout";
                 but.style.fontSize = '70px';
                 function clicka() {
-                    FB.logout(function (response) {
-                        console.log(response);
+                    FB.getLoginStatus(function (response) {
+                        FB.logout(function (response) {
+                            console.log("Logged Out!");
+                        });
                     });
                     document.cookie = "loggedout";
                     const elm = document.createElement('a');

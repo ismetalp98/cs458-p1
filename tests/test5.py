@@ -14,7 +14,7 @@ def test5():
     driver = webdriver.Chrome(config('CHROMEDRIVER_PATH'))
 
     # Case 5.1: Change language to English from Turkish
-    driver.get("http://dijkstra.ug.bcc.bilkent.edu.tr/~alp.eren/cs458-p1/index.html")
+    driver.get("https://ismetalp98.github.io/cs458-p1/")
 
     select = Select(driver.find_element(By.ID, 'language-selector'))
     select.select_by_value('en')
